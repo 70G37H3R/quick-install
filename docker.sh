@@ -37,7 +37,7 @@ sudo systemctl restart docker
 sudo systemctl enable docker
 #Run docker without sudo
 sudo usermod -aG docker $USER
-reboot
+sudo reboot
 #########################################
 #You need to reboot to apply this change#
 #########################################
