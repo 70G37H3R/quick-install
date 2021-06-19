@@ -1,7 +1,8 @@
 sudo apt update
 sudo apt install -y curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
-sudo apt install -y kubeadm kubelet kubectl 
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt-get install -y kubeadm kubelet kubectl 
 sudo apt-mark hold kubeadm kubelet kubectl
 kubeadm version
 sudo swapoff –a
