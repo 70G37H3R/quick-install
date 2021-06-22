@@ -11,9 +11,8 @@ sudo apt update
 sudo apt install -y containerd.io docker-ce docker-ce-cli
 sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-# Create required directories // Comment this step if you are not behind a proxy //
-sudo mkdir -p /etc/systemd/system/docker.service.d
-# Create daemon json config file
+
+#Config Docker daemon 
 sudo tee /etc/docker/daemon.json <<EOF
 {
   "exec-opts": ["native.cgroupdriver=systemd"],
@@ -24,7 +23,9 @@ sudo tee /etc/docker/daemon.json <<EOF
   "storage-driver": "overlay2"
 }
 EOF
-#Config proxy for docker // Comment this step if you are not behind a proxy //
+
+#Config proxy for Docker serivce  // Comment this step if you are not behind a proxy //
+sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo tee /etc/systemd/system/docker.service.d/http-proxy.conf <<EOF
 [Service]
 Environment="http_proxy=http://proxy.ctu.edu.vn:3128"
@@ -32,11 +33,13 @@ Environment="https_proxy=http://proxy.ctu.edu.vn:3128"
 Environment="ftp_proxy=http://proxy.ctu.edu.vn:3128"
 Environment="no_proxy=localhost,127.0.0.1,192.168.100.0/16,10.0.0.0/24"
 EOF
-#Start and enable Services
+
+#Start and enable Docker services
 sudo systemctl daemon-reload 
 sudo systemctl restart docker
 sudo systemctl enable docker
-#Run docker without sudo
+
+#Run Docker without sudo
 sudo usermod -aG docker $USER
 sudo reboot
 #########################################
