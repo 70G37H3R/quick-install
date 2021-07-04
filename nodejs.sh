@@ -1,3 +1,4 @@
+cd ~
 sudo apt update
 sudo apt install -y build-essential
 sudo apt install -y python-software-properties
