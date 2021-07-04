@@ -1,10 +1,8 @@
 #GO 1.3
 cd ~
-curl -O https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz
-sha256sum go1.10.3.linux-amd64.tar.gz
-tar xvf go1.10.3.linux-amd64.tar.gz
-sudo chown -R root:root ./go
-sudo mv go /usr/local
+sudo apt instal -y wget 
+wget https://golang.org/dl/go1.16.5.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
 cat >> ~/.profile <<EOF
 export GOPATH=\$HOME/go
 export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin
