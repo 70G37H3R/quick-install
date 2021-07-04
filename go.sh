@@ -7,7 +7,7 @@ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.5.linux-amd64.tar.gz
 cat >> ~/.profile <<EOF
 export GOPATH=\$HOME/go
 export GOROOT=\$HOME/go
-export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin
+export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin:\$GOROOT/bin
 EOF
 source ~/.profile
 go version
