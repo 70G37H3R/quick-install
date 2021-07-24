@@ -7,6 +7,7 @@ sudo apt-mark hold kubeadm kubelet kubectl
 kubeadm version
 sudo swapoff –a
 sudo kubeadm init --pod-network-cidr=10.244.0.0/1
+sysctl net.bridge.bridge-nf-call-iptables=1
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
