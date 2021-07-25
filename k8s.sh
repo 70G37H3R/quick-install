@@ -15,7 +15,3 @@ sudo kubectl get nodes
 sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 sudo kubectl get pods --all-namespaces
 kubectl taint nodes --all node-role.kubernetes.io/master-
-
-sudo mkdir -p /shared
-sudo chmod 777 /shared
-sudo chown nobody:nogroup /shared
