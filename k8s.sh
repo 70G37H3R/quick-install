@@ -12,7 +12,7 @@ sudo sysctl net.bridge.bridge-nf-call-iptables=1
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
-export KUBECONFIG=/etc/kubernetes/kubelet.conf
+
 
 #sudo kubectl get nodes
 #sudo kubectl get pods --all-namespaces
