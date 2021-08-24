@@ -6,7 +6,7 @@ sudo apt update
 sudo app install -y kubeadm kubelet kubectl 
 sudo apt-mark hold kubeadm kubelet kubectl
 kubeadm version
-swapoff –a
+sudo swapoff –a
 sudo kubeadm init --pod-network-cidr=10.0.0.0/24
 sudo sysctl net.bridge.bridge-nf-call-iptables=1
 mkdir -p $HOME/.kube
