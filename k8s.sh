@@ -10,7 +10,7 @@ kubeadm version
 sudo swapoff –a
 sudo sysctl net.bridge.bridge-nf-call-iptables=1
 
-sudo kubeadm init --pod-network-cidr=10.0.0.0/24
+sudo kubeadm init --apiserver-advertise-address=X.X.X.X --pod-network-cidr=10.244.0.0/16 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
