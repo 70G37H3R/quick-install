@@ -15,6 +15,8 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
+#rm /etc/containerd/config.toml
+#systemctl restart containerd
 
 #sudo kubectl get nodes
 #sudo kubectl get pods --all-namespaces
