@@ -21,5 +21,8 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 #sudo kubectl get nodes
 #sudo kubectl get pods --all-namespaces
+
 #sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+#kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
+
 #kubectl taint nodes --all node-role.kubernetes.io/master-
