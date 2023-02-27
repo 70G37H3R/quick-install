@@ -28,9 +28,9 @@ EOF
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo tee /etc/systemd/system/docker.service.d/http-proxy.conf <<EOF
 [Service]
-Environment="http_proxy=http://proxy.ctu.edu.vn:3128"
-Environment="https_proxy=http://proxy.ctu.edu.vn:3128"
-Environment="ftp_proxy=http://proxy.ctu.edu.vn:3128"
+Environment="http_proxy=http://proxy.server.domain:port"
+Environment="https_proxy=http://proxy.server.domain:port"
+Environment="ftp_proxy=http://proxy.server.domain:port"
 Environment="no_proxy=localhost,127.0.0.1,192.168.100.0/24,172.0.0.0/24,10.0.0.0/24"
 EOF
 
